@@ -1,0 +1,16 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: weixiaoyi-parent
+weixiaoyi:
+  doc:
+    api-name: weixiaoyi-parent
+    title: 魏小祎_测试系统_接口文档
+    description: 魏小祎
+    author: yuanLong Wei
+    email: weiyuanlong0518@sina.com
+    version: 1.0
+    group-name: group-parent
