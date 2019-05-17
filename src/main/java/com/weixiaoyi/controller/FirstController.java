@@ -30,7 +30,7 @@ public class FirstController {
     public String restOne() {
         log.info("restOne");
         try {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
