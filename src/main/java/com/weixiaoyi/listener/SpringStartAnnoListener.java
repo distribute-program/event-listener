@@ -18,6 +18,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class SpringStartAnnoListener {
 
+    /**
+     * 如果使用异步执行 一定要配合 @EnableAsync 使用，方能生效
+     *
+     * @param restVo
+     */
     @Async
     @EventListener(classes = {RestEvent.class})
     public void listenAnno(RestEvent restVo) {
