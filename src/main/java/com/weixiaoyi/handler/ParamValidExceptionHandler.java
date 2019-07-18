@@ -9,6 +9,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +22,8 @@ import java.util.List;
  * 版本号   作者     日期      操作
  * 1.0     ylWei   2019/7/18   新建
  */
-@ControllerAdvice
 @Slf4j
-@ResponseBody
+@RestControllerAdvice
 public class ParamValidExceptionHandler {
 
     /**
@@ -34,6 +35,7 @@ public class ParamValidExceptionHandler {
      */
     @ExceptionHandler(value = BindException.class)
     public ResultVo<List<ValidErrorVo>> validExceptionHandler(BindException exception) {
+        exception.printStackTrace();
         BindingResult bindingResult = exception.getBindingResult();
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
 
