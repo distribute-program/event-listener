@@ -25,6 +25,7 @@ import java.util.Date;
 @RequestMapping("binder")
 public class TestEditorController {
 
+    @InitBinder
     public void initBinder(WebDataBinder binder) {
         log.info("initBinder执行了====");
         CustomDateEditor customDateEditor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:SS"), true);

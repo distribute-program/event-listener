@@ -21,7 +21,7 @@ public class TestBindVo implements Serializable {
 
     private String userName;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:SS")
+    // @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:SS")
     private Date biethday;
 
 }
