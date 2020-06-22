@@ -1,6 +1,6 @@
 package com.weixiaoyi.config;
 
-import cn.hutool.core.util.NetUtil;
+import cn.hutool.core.net.NetUtil;
 import com.weixiaoyi.bean.DocConfigProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
