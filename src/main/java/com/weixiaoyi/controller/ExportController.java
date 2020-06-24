@@ -5,6 +5,7 @@ import cn.hutool.core.io.IoUtil;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 import com.weixiaoyi.annotations.ExportTitle;
+import com.weixiaoyi.model.ExportWalletUserBo;
 import com.weixiaoyi.model.UserModel;
 import com.weixiaoyi.util.ExportUtils;
 import io.swagger.annotations.Api;
@@ -19,7 +20,9 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -55,16 +58,27 @@ public class ExportController {
     @ApiOperation(value = "测试导出", notes = "测试导出")
     public void export(HttpServletResponse response) throws IOException {
 
+        /*List<ExportWalletUserBo> userModels = new ArrayList<>();
+        for (int i = 1; i < 6; i++) {
+            ExportWalletUserBo userModel = new ExportWalletUserBo();
+            userModel.setUserName("辉煌国际一号楼1007啊啊啊啊啊 。地址" + i);
+            userModel.setBalanceAmount(new BigDecimal("300").multiply(new BigDecimal(i)));
+            userModel.setCellPhone("电话号 1565656465688626165656" + i);
+            userModel.setUserName("姓名" + i);
+            userModel.setCreateTime(new Date());
+            userModel.setCreateTime2("2020-06-22 00:22:22");
+            userModels.add(userModel);
+        }*/
         List<UserModel> userModels = new ArrayList<>();
         for (int i = 1; i < 6; i++) {
             UserModel userModel = new UserModel();
-            userModel.setAddress("辉煌国际一号楼1007啊啊啊啊啊 。地址" + i);
+            // userModel.setAddress("辉煌国际一号楼1007啊啊啊啊啊 。地址" + i);
             userModel.setAge(i);
             userModel.setTelephone("电话号 1565656465688626165656" + i);
+            userModel.setAddress("电话号 1565656465688626165656" + i);
             userModel.setUserName("姓名" + i);
             userModels.add(userModel);
         }
-
         ExportUtils.exportXlsx(response, userModels,UserModel.class,null);
     }
 

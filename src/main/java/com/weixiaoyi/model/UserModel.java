@@ -30,7 +30,7 @@ public class UserModel implements Serializable {
     @ExportTitle(value = "年龄")
     private Integer age;
 
-    @ExportTitle(value = "用户地址啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊", width = 50)
+    @ExportTitle(value = "用户地址")
     private String address;
 
     @ExportTitle(value = "用户电话")

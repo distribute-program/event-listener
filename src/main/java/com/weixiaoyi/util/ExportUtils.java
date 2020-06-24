@@ -75,11 +75,13 @@ public class ExportUtils {
         writer.setRowHeight(1,20);
 
         // 设置未自定义列自动调整宽度
+        int j = 0;
         for (Field field : fields) {
             if (!"serialVersionUID".equals(field.getName())) {
+                j++;
                 Integer width = AnnotationUtil.getAnnotationValue(field, ExportTitle.class, "width");
                 if (width == 0) {
-                    writer.autoSizeColumn(i);
+                    writer.autoSizeColumn(j);
                 }
             }
         }
